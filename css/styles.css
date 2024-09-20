@@ -1,0 +1,220 @@
+/* Estilos generales */
+body {
+    font-family: Courier New, monospace;
+	font-size: 20px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	background-image: url('fondo.png');	/* Ruta de la imagen */
+    background-size: cover; 			/* Hace que la imagen cubra toda la página */
+    background-position: center; 		/* Centra la imagen */
+    background-repeat: no-repeat; 		/* Evita que la imagen se repita */
+    background-attachment: fixed; 		/* La imagen de fondo queda fija al hacer scroll */
+    color: black; 						/* Cambia el color de texto a blanco para contraste */
+	opacity: 1; 						/* Cambia este valor para ajustar la transparencia (0.0 a 1.0) */
+    z-index: -1; 						/* Coloca la imagen detrás del contenido */
+}
+
+/* Capa semitransparente */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 1, 1, 0); /* Capa negra semitransparente (ajusta el color y la opacidad) */
+    z-index: -1;
+}
+
+/* Parte izquierda: imagen */
+.izquierda {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.izquierda-a {
+    width: 70%;
+    display: flex;
+    flex-direction: column; /* Coloca las imágenes una debajo de la otra */
+    align-items: center;    /* Centra las imágenes horizontalmente */
+    justify-content: right; /* Centra las imágenes verticalmente */
+    padding: 20px;
+}
+
+/* Estilo de las imágenes */
+.imagen {
+    width: 80%;  			/* Todas las imágenes tendrán el mismo ancho */
+    height: auto; 			/* Mantiene la proporción de la imagen */
+    margin-bottom: 20px; 	/* Espacio entre las imágenes */
+    border-radius: 10px; 	/* Bordes redondeados opcionales */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Estilo de la imagen */
+.imagen-izquierda {
+    max-width: 150%;  	/* La imagen ocupará el 90% de la parte izquierda */
+    height: auto;   	/* Mantiene la proporción de la imagen */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Parte derecha: contiene el texto y la descripción */
+.derecha {
+    width: 50%; 				/* Ocupa la mitad derecha de la página */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 	/* Centra el contenido verticalmente */
+    align-items: flex-start; 	/* Alinea el contenido a la izquierda de esta sección */
+}
+
+/* Estilo del título */
+.derecha h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 40% 60%; /* Dos columnas iguales: izquierda y derecha */
+    height: 50vh; 					/* Altura completa de la pantalla */
+}
+
+/* Estilo de la descripción */
+.descripcion {
+    line-height: 1.5em;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+    box-sizing: border-box;
+	opacity: 1.0; 			/* Ajustar la transparencia (0.0 a 1.0) */
+	width: 150%;
+}
+
+/* Estilos del encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #009;
+    color: white;
+}
+
+header .logo img {
+    width: 100px;
+}
+
+header nav {
+    flex-grow: 1;
+}
+
+.menu {
+    list-style: none;	
+	font-size: 18px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.menu a.active {
+    background-color: #007bff;		/* Fondo azul */
+    color: white; 					/* Texto blanco */
+    border: 1px solid #0056b3;	 	/* Borde opcional */
+    border-radius: 5px;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+/* Contenedor del formulario de inicio de sesión */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+/* Caja del formulario de inicio de sesión */
+.login-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+/* Título del formulario */
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Campos del formulario */
+.login-box label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Botón de enviar */
+.login-box button {
+    width: 30%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos del contenido principal */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #009;
+	font-size: 12px;
+    color: white;
+    text-align: center;
+    padding: 1px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
